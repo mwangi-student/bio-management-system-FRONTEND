@@ -8,13 +8,13 @@ function StudentDetails() {
   const navigate = useNavigate(); // Hook to navigate after deleting
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [student, setStudent] = useState(null);
- 
+
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedInstructor, setSelectedInstructor] = useState("");
 
   useEffect(() => {
     // Fetch student data dynamically using the student ID from the URL
-    fetch(`http://127.0.0.1:8000/students/${id}`, {
+    fetch(`https://bio-management-system-1.onrender.com/students/${id}`, {
       method: "GET"
     })
       .then((response) => response.json())
@@ -40,7 +40,7 @@ function StudentDetails() {
     };
 
     // Send the updated data to the backend
-    fetch(`http://127.0.0.1:8000/students/${id}`, {
+    fetch(`https://bio-management-system-1.onrender.com/students/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -58,7 +58,7 @@ function StudentDetails() {
 
   const handleDelete = () => {
     // Send DELETE request to remove the student
-    fetch(`http://127.0.0.1:8000/students/${id}`, {
+    fetch(`https://bio-management-system-1.onrender.com/students/${id}`, {
       method: "DELETE"
     })
       .then(() => {

@@ -16,7 +16,7 @@ function Students() {
 
   // Fetch students data on component mount
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/students")
+    fetch("https://bio-management-system-1.onrender.com/students")
       .then((response) => response.json()) // Assuming the API returns JSON data
       .then((data) => setStudents(data)) // Update state with fetched data
       .catch((error) => console.error("Error fetching students:", error));
@@ -40,7 +40,7 @@ function Students() {
   // Handle adding a new student
   const handleAddStudent = (e) => {
     e.preventDefault();
-    fetch("http://127.0.0.1:8000/students", {
+    fetch("https://bio-management-system-1.onrender.com/students", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

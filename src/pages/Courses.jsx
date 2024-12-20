@@ -11,7 +11,9 @@ function Courses() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/courses");
+        const response = await fetch(
+          "https://bio-management-system-1.onrender.com/courses"
+        );
         const data = await response.json();
         setCourses(data);
       } catch (error) {
@@ -24,13 +26,16 @@ function Courses() {
 
   const handleAddCourse = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/courses", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newCourse)
-      });
+      const response = await fetch(
+        "https://bio-management-system-1.onrender.com/courses",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newCourse)
+        }
+      );
 
       if (response.ok) {
         const addedCourse = await response.json();

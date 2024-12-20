@@ -23,7 +23,10 @@ function CourseDetails() {
       headers: { "Content-Type": "application/json" }
     };
 
-    fetch(`http://127.0.0.1:8000/courses/${id}`, requestOptions)
+    fetch(
+      `https://bio-management-system-1.onrender.com/courses/${id}`,
+      requestOptions
+    )
       .then((response) => response.json())
       .then((data) => {
         setCourse(data);
@@ -49,7 +52,7 @@ function CourseDetails() {
   // Update course
   const handleEditSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://127.0.0.1:8000/courses/${id}`, {
+    fetch(`https://bio-management-system-1.onrender.com/courses/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
@@ -64,7 +67,7 @@ function CourseDetails() {
 
   // Delete course
   const handleDeleteClick = () => {
-    fetch(`http://127.0.0.1:8000/courses/${id}`, {
+    fetch(`https://bio-management-system-1.onrender.com/courses/${id}`, {
       method: "DELETE"
     })
       .then(() => navigate("/courses"))

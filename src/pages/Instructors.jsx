@@ -27,7 +27,7 @@ function Instructors() {
 
   // Fetch instructors data when component mounts
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/instructors", {
+    fetch("https://bio-management-system-1.onrender.com/instructors", {
       method: "GET"
     })
       .then((response) => response.json())
@@ -40,7 +40,7 @@ function Instructors() {
   const handleAddInstructor = (e) => {
     e.preventDefault();
 
-    fetch("http://127.0.0.1:8000/instructors", {
+    fetch("https://bio-management-system-1.onrender.com/instructors", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

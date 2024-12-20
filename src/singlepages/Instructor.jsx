@@ -13,7 +13,7 @@ function InstructorDetails() {
 
   // Fetch the instructor data when the component mounts
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/instructors/${id}`, {
+    fetch(`https://bio-management-system-1.onrender.com/instructors/${id}`, {
       method: "GET"
     })
       .then((response) => response.json())
@@ -39,7 +39,7 @@ function InstructorDetails() {
     };
 
     // Send the updated data to the API (PUT request)
-    fetch(`http://127.0.0.1:8000/instructors/${id}`, {
+    fetch(`https://bio-management-system-1.onrender.com/instructors/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -56,7 +56,7 @@ function InstructorDetails() {
 
   // Handle deleting the instructor
   const handleDeleteClick = () => {
-    fetch(`http://127.0.0.1:8000/instructors/${id}`, {
+    fetch(`https://bio-management-system-1.onrender.com/instructors/${id}`, {
       method: "DELETE"
     })
       .then(() => {
